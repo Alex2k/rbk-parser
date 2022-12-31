@@ -1,0 +1,5 @@
+#framework:
+#    translator:
+#        paths:
+#            - '%kernel.project_dir%/translations/global' # Глобальный регион (по-умолчанию)
+#        fallbacks: '%fallback%'

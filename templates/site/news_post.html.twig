@@ -1,0 +1,30 @@
+{% extends 'site/_layout/site.html.twig' %}
+
+{% trans_default_domain 'site' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+    <h1>{{ newsPost.title }}</h1>
+    <div><b>{{ newsPost.date|date('d.m.Y H:m') }}</b></div>
+
+    {% if newsPost.image %}
+        <div><img src="{{ newsPost.image }}" alt=""></div>
+    {% endif %}
+
+    <div>
+        {{ newsPost.description|nl2br }}
+    </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'site/_layout/site.html.twig' %}
+
+{% trans_default_domain 'site' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+    <h1>Main page</h1>
+
+    <h2>News</h2>
+
+    {% for newsPost in newsList %}
+
+        <h1><a href="{{ path('site-news-post', {'id': newsPost.id}) }}">{{ newsPost.title }}</a></h1>
+        <div><b>{{ newsPost.date|date('d.m.Y H:m') }}</b></div>
+
+        {% if newsPost.image %}
+            <div><img src="{{ newsPost.image }}" alt=""></div>
+        {% endif %}
+
+        <div>
+            {{ newsPost.description|nl2br }}
+        </div>
+
+        <hr>
+
+    {% endfor %}
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+{% endblock %}

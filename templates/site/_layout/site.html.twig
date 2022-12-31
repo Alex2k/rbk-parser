@@ -1,0 +1,19 @@
+{% extends 'site/_layout/_base.html.twig' %}
+
+{% trans_default_domain 'site' %}
+
+{% block body %}
+
+    {% block content %}{% endblock %}
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+{% endblock %}
